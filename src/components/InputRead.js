@@ -42,9 +42,8 @@ class InputRead extends React.Component{
 
             <br/>
             <button onClick={this.remove}>Clean</button><br />
-            {/* <button  onClick={this.props.sendText}>Submit</button> */}
-            <br />
-            {this.state.text}
+            
+            
             </>
         )
     }
@@ -56,10 +55,6 @@ const mapDispatchToProps = (dispatch) => {
     };
   };
   
-  const mapStateToProps = (state) => {
-    return {
-     
-    };
-  };
+ 
 
-export default connect(mapStateToProps, mapDispatchToProps)(InputRead)
+export default connect(null, mapDispatchToProps)(InputRead)

@@ -8,13 +8,28 @@ export const reducer =(state = initState , action )=>{
             return { ...state };
         case "TEXT_UPLOADED":
             
-            console.log(action.payload)
+            
+            let strArr = action.payload.split('')
+            for(let i = 0 ; i < strArr.length ; i++){ 
+                if((strArr[i] === '/' && strArr[i + 1] === '*' )|| (strArr[i] === '*' && strArr[i + 1] === '/' )||( strArr[i] === '/' && strArr[ i + 1] === '/' )){
+                     strArr.splice(i ,1)
+                     strArr.splice(i,1)
+                }
+            
+            }
+            let sanitized = strArr.join('')
+
+
+           
             return{
                 ...state,
-                text:action.payload
+                text:sanitized
             }
 
             default:
              return { ...state  };
     }
 } 
+
+
+
