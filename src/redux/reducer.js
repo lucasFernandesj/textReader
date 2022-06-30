@@ -7,26 +7,30 @@ export const reducer =(state = initState , action )=>{
         case "TEST":
             return { ...state };
         case "TEXT_UPLOADED":
-            
-            let lineBreak = '\r\n'
-            
-            let strArr = action.payload.split('')
-            // console.log(strArr)
-            for(let i = 0 ; i < strArr.length ; i++){ 
-                if((strArr[i] === '/' && strArr[i + 1] === '*' )|| (strArr[i] === '*' && strArr[i + 1] === '/' )||( strArr[i] === '/' && strArr[ i + 1] === '/' )){
-                     strArr.splice(i ,1)
-                     strArr.splice(i,1)
-                }
-               
+            let str = action.payload
+            // console.log(str)
+            let noComments;
+            if(str.includes("/*") && str.includes("*/")){
+                 removeDoubleComments(str)   
             }
-            let sanitized = strArr.join('')
-            let newSanitized = sanitized.split('\r\n')
-
-
+           function removeDoubleComments(str){
+            let position1 = str.indexOf("/*")
+            let position2 = str.indexOf("*/")
+            let firstPart = str.substr(0,position1)
+            let secondPart = str.substr(position2+2,str.length-1)
+            let noDoubleComments = firstPart+secondPart
+            if(noDoubleComments.includes("/*") && noDoubleComments.includes("*/")){
+                removeDoubleComments(noDoubleComments)
+            }else{
+                noComments = noDoubleComments
+            }
+          
+        }
+        
            
             return{
                 ...state,
-                text:newSanitized
+                text:noComments
             }
 
             default:
