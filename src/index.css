@@ -45,7 +45,7 @@ code {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  
+  padding: 20px;
 }
 .hidden{
   display:none;
@@ -80,11 +80,12 @@ code {
 .result{
   background-color: black;
   border: 7px solid white;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
   color: white;
-  width: 500px;
+  width: 530px;
   font-size: large;
   font-weight: bold;
-  height: 400px;
+  min-height: 400px;
+  /* overflow: auto; */
 }

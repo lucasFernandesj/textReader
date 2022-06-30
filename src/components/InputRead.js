@@ -6,10 +6,7 @@ import{uploadText} from '../redux/actions'
 class InputRead extends React.Component{
     constructor(props){
         super(props);
-        this.state={
-            text:'',
-            fileName:''
-        }
+       
     }
     handleFileChange=(event)=>{
         const file = event.target.files[0];
@@ -17,8 +14,7 @@ class InputRead extends React.Component{
         reader.readAsText(file);
         reader.onload = () =>{
             this.props.sendText(reader.result)
-            // this.props.uploadText(reader.result)
-            this.setState({text:reader.result , fileName:file.name})
+            
             
         }
         reader.onerror =()=>{
@@ -46,10 +42,10 @@ class InputRead extends React.Component{
             <div className='inputReadContainer'>
             <h1 className="header">Upload a file</h1>
             <label for="files" className='inputFileLabel'>Choose a file</label>
-            <input type="file" id="files"  className='hidden' onChange={this.handleFileChange}/>
+            <input type="file" id="files"  className='hidden' accept=".txt" onChange={this.handleFileChange}/>
 
             <br/>
-            <button onClick={this.remove}>Clean</button><br />
+            
             
             
             </div>

@@ -8,8 +8,10 @@ export const reducer =(state = initState , action )=>{
             return { ...state };
         case "TEXT_UPLOADED":
             
+            let lineBreak = '\r\n'
             
             let strArr = action.payload.split('')
+            // console.log(strArr)
             for(let i = 0 ; i < strArr.length ; i++){ 
                 if((strArr[i] === '/' && strArr[i + 1] === '*' )|| (strArr[i] === '*' && strArr[i + 1] === '/' )||( strArr[i] === '/' && strArr[ i + 1] === '/' )){
                      strArr.splice(i ,1)
@@ -18,12 +20,13 @@ export const reducer =(state = initState , action )=>{
                
             }
             let sanitized = strArr.join('')
+            let newSanitized = sanitized.split('\r\n')
 
 
            
             return{
                 ...state,
-                text:sanitized
+                text:newSanitized
             }
 
             default:

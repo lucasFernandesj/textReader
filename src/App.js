@@ -5,7 +5,9 @@ import React from 'react';
 import ReadFile from './components/ReadFile';
 import Output from './components/Output';
 
+
 import {BrowserRouter,Routes,Route} from  'react-router-dom'
+import InputRead from './components/InputRead';
 
 
 class App extends React.Component {
@@ -20,7 +22,7 @@ class App extends React.Component {
       // </div>
       <BrowserRouter>
       <Routes>
-      <Route path='/' element={<ReadFile/>} />
+      <Route path='/' element={<InputRead/>} />
       <Route path='/output' element={<Output/>} />
 
       </Routes>
