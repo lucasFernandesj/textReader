@@ -15,7 +15,7 @@ export const reducer =(state = initState , action )=>{
                      strArr.splice(i ,1)
                      strArr.splice(i,1)
                 }
-            
+               
             }
             let sanitized = strArr.join('')
 

@@ -12,8 +12,8 @@ class ReadFile extends React.Component{
     render(){
         return(
             <>
-            <Link to='/output' >Output</Link>
-            <h1>Upload a file</h1>
+            {/* <Link to='/output' >Output</Link> */}
+            
             <InputRead />
             </>
         )

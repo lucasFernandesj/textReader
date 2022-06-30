@@ -5,9 +5,73 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.link{
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  border: 5px solid white;
+  color: white;
+  padding:10px;
+  border-radius: 5px;
+}
+.link:link{
+  text-decoration: none;
+}
+.link:visited{
+  text-decoration: none;
+}
+.link:hover{
+  color:  #2B80BB ;
+  background-color: white;
+  border: 5px solid #2B80BB;
+  font-weight: bold;
+}
+.header{
+  color: white;
+}
+
+.inputContainerWrapp{
+  display: flex;
+  background-color: #2B80BB;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+.hidden{
+  display:none;
+}
+.inputFileLabel{
+  border: 5px solid white;
+  color: white;
+  padding:10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: large;
+
+}
+
+.inputFileLabel:hover{
+  color:  #2B80BB ;
+  background-color: white;
+  border: 5px solid #2B80BB;
+  font-weight: bold;
+}
+
+
+
+.inputReadContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
