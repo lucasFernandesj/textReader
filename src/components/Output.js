@@ -12,9 +12,16 @@ class Output extends React.Component{
     render(){
         return(
             <>
-            <Link to='/' >Upload file</Link>
-            <h1>Output page</h1>
+            <div className='inputContainerWrapp'>
+            <Link to='/' className='link'>Upload file</Link>
+            <div className='inputReadContainer'>
+            <h1 className='header'>Output page</h1>
+            <div className='result'>
             {this.props.text}
+
+            </div>
+            </div>
+            </div>
             </>
         )
     }
