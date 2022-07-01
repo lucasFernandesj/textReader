@@ -57,7 +57,7 @@ export const reducer =(state = initState , action )=>{
                         }
                     }
                     let commentRemoved = str.substr(0 , commentStart)+str.substr(lineBreak , str.length-1)
-                    console.log("comment removed "+commentRemoved)
+                    // console.log("comment removed "+commentRemoved)
                     if(commentRemoved.includes("//")){
                         removeSingleComment(commentRemoved)
                     }else if(commentRemoved.includes("/*") && commentRemoved.includes("*/")){
